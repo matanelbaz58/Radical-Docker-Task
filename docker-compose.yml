@@ -1,0 +1,12 @@
+services:
+  radicale:
+    image: melbaz58/radicale-calendar:stable
+    container_name: radicale
+    ports:
+      - "5232:5232"
+    env_file:
+      - .env
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    restart: unless-stopped
